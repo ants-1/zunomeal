@@ -14,10 +14,10 @@ const RegisterForm = () => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<IFormInput>()
+  } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data)
+    console.log(data);
   };
 
   return (
@@ -25,19 +25,19 @@ const RegisterForm = () => {
       <Stack gap="4" maxW="sm" w="full">
         <Field.Root invalid={!!errors.name}>
           <Field.Label>Name<Box as="span" color="red.500">*</Box></Field.Label>
-          <Input {...register("name", { required: true })} />
+          <Input {...register("name", { required: "Name is required" })} />
           <Field.ErrorText>{errors.name?.message}</Field.ErrorText>
         </Field.Root>
 
         <Field.Root invalid={!!errors.email}>
           <Field.Label>Email<Box as="span" color="red.500">*</Box></Field.Label>
-          <Input {...register("email", { required: true })} />
+          <Input {...register("email", { required: "Email is required" })} />
           <Field.ErrorText>{errors.email?.message}</Field.ErrorText>
         </Field.Root>
 
         <Field.Root invalid={!!errors.password}>
           <Field.Label>Password<Box as="span" color="red.500">*</Box></Field.Label>
-          <Input type="password" {...register("password", { required: true })} />
+          <Input type="password" {...register("password", { required: "Password is required" })} />
           <Field.ErrorText>{errors.password?.message}</Field.ErrorText>
         </Field.Root>
 
@@ -55,7 +55,6 @@ const RegisterForm = () => {
         </Field.Root>
 
         <Button type="submit">Register</Button>
-
       </Stack>
     </Box>
   )

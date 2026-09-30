@@ -4,6 +4,7 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import App from './App.tsx'
 import Register from './pages/Register.tsx'
+import Login from './pages/Login.tsx'
 import { Provider } from './components/ui/provider.tsx'
 import AuthLayout from './layouts/AuthLayout.tsx'
 import MainLayout from './layouts/MainLayout.tsx'
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
           <Route element={<AuthLayout />}>
             <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
           </Route>
 
           <Route element={<MainLayout />}>
