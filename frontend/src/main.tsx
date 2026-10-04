@@ -8,6 +8,7 @@ import Login from './pages/Login.tsx'
 import { Provider } from './components/ui/provider.tsx'
 import AuthLayout from './layouts/AuthLayout.tsx'
 import MainLayout from './layouts/MainLayout.tsx'
+import OnBoarding from './pages/OnBoarding.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
           <Route element={<AuthLayout />}>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/onboarding" element={<OnBoarding />} />
           </Route>
 
           <Route element={<MainLayout />}>
