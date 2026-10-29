@@ -10,6 +10,11 @@ import AuthLayout from './layouts/AuthLayout.tsx'
 import MainLayout from './layouts/MainLayout.tsx'
 import OnBoarding from './pages/OnBoarding.tsx'
 import Dashboard from './pages/Dashboard.tsx'
+import ShoppingList from './pages/ShoppingList.tsx'
+import NotFound from './pages/NotFound.tsx'
+import MealPlanner from './pages/MealPlanner.tsx'
+import Recipes from './pages/Recipes.tsx'
+import Profile from './pages/Profile.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -23,9 +28,19 @@ createRoot(document.getElementById('root')!).render(
           </Route>
 
           <Route element={<MainLayout />}>
+            {/* Public Routes */}
             <Route index path="/" element={<App />} />
+
+            {/* Private Routes */}
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/shopping-list" element={<ShoppingList />} />
+            <Route path="/meal-planner" element={<MealPlanner />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
+
+          {/* 404 Page */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </Provider>

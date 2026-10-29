@@ -17,7 +17,7 @@ import {
   todaysMeals,
 } from "@/lib/dashboardData";
 
-const Dashboard = () => {
+function Dashboard() {
   return (
     <Box maxW="6xl" mx="auto" px="6" py="8">
       <Stack gap="8">

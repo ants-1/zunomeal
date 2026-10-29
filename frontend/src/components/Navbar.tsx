@@ -7,6 +7,8 @@ import {
   Menu,
   Portal,
   Text,
+  LinkOverlay,
+  LinkBox
 } from "@chakra-ui/react";
 import { Link } from "react-router";
 import {
@@ -39,12 +41,18 @@ const Navbar = () => {
         justify="space-between"
       >
         {/* Logo */}
-        <Text
-          fontSize="xl"
-          fontWeight="bold"
-        >
-          ZunoMeal
-        </Text>
+        <LinkBox>
+          <LinkOverlay asChild>
+            <Link to="/">
+              <Text
+                fontSize="xl"
+                fontWeight="bold"
+              >
+                ZunoMeal
+              </Text>
+            </Link>
+          </LinkOverlay>
+        </LinkBox>
 
         {/* Desktop Navigation */}
         <HStack
